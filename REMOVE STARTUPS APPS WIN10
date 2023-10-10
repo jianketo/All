@@ -1,0 +1,3 @@
+To remove the staged apps. Try this command:
+Get-AppxProvisionedPackage -online | Out-GridView -PassThru | Remove-AppxProvisionedPackage -online
+Select any of the items you want to remove and click OK.
