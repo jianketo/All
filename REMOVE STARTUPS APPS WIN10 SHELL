@@ -3,5 +3,5 @@ Get-AppxProvisionedPackage -online | Out-GridView -PassThru | Remove-AppxProvisi
 #Select any of the items you want to remove and click OK.
 
 
-#Validate all user instaled app
+#Validate all user instaled apps
 Get-AppxPackage -Name "Microsoft.Print3D" -AllUsers | select Name, PackageUserInformation, InstallLocation | fl
