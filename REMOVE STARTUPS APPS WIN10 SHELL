@@ -1,3 +1,7 @@
-To remove the staged apps. Try this command:
+#To remove the staged apps. Try this command:
 Get-AppxProvisionedPackage -online | Out-GridView -PassThru | Remove-AppxProvisionedPackage -online
-Select any of the items you want to remove and click OK.
+#Select any of the items you want to remove and click OK.
+
+
+#Validate all user instaled app
+Get-AppxPackage -Name "Microsoft.Print3D" -AllUsers | select Name, PackageUserInformation, InstallLocation | fl
