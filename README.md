@@ -1,2 +1,2 @@
-Detalle de mis scripts
+Recopilatorios de scripts utiles
 
