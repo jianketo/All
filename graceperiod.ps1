@@ -5,6 +5,8 @@ Param(
         [Parameter(Mandatory=$false)] [Switch]$Force
      )
 
+#validate day left -  wmic /namespace:\\root\CIMV2\TerminalServices PATH Win32_TerminalServiceSetting WHERE (__CLASS !="") CALL GetGracePeriodDays
+
 Clear-Host
 $ErrorActionPreference = "SilentlyContinue"
 
@@ -62,21 +64,21 @@ $key.SetAccessControl($acl)
 Remove-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\GracePeriod'
 
 #Restart RPD services
-Stop-Service -Name TermService
+Stop-Service -Name "TermService"
 Start-Sleep -Seconds 5
-Start-Service -Name TermService
+Start-Service -Name "TermService"
 Start-Sleep -Seconds 5
-Stop-Service -Name RDMS
+Stop-Service -Name "RDMS"
 Start-Sleep -Seconds 5
-Start-Service -Name RDMS
+Start-Service -Name "RDMS"
 Start-Sleep -Seconds 5
-Stop-Service -Name Tssdis
+Stop-Service -Name "Tssdis"
 Start-Sleep -Seconds 5
-Start-Service -Name Tssdis
+Start-Service -Name "Tssdis"
 Start-Sleep -Seconds 5
-Stop-Service -Name SessionEnv
+Stop-Service -Name "SessionEnv"
 Start-Sleep -Seconds 5
-Start-Service -Name SessionEnv
+Start-Service -Name "SessionEnv"
 Start-Sleep -Seconds 5
 
 write-host
